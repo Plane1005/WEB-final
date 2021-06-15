@@ -5,7 +5,11 @@
 .m-caro{
   margin: 0 auto;
 }
+.m-caro img{
+  height: 725px!important;
+  width: 1200px!important;
+}
 .site-layout-content{
-  padding: 20px 20px 50px 20px;
+  padding: 15px 20px 50px 20px;
   height: 60vh!important;
 }
