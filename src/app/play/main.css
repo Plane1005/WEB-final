@@ -1,0 +1,456 @@
+/* reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px white;
+    background: #ccc;
+    color: transparent;
+}
+
+ ::-webkit-scrollbar-track {
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 0 5px transparent;
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    height: 100px;
+    /* 滚动条滑块长度 */
+    background-color: transparent;
+}
+
+
+/* content */
+
+#app {
+    /*  height: 100%;*/
+    position: relative;
+    display: flex;
+    background-color: white;
+}
+
+.song__bg {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /*  background: url(images/coverblur.jpg) no-repeat center;*/
+    background-size: auto 100%;
+    width: 508px;
+    height: 438px;
+    padding-top: 0px;
+    margin-top: 91px;
+}
+.svg13,
+        .svg1 {
+            margin-left: 500px;
+            margin-top: 10px;
+        }
+        
+        .svg15,
+        .svg14,
+        .svg2,
+        .svg3,
+        .svg5,
+        .svg12,
+        .svg11,
+        .svg6,
+        .svg9,
+        .svg8 {
+            margin-left: 20px;
+        }
+        
+        .svg22 {
+            margin-left: 19px;
+            margin-top: 12px;
+        }
+        
+        .svg21 {
+            margin-top: 5px;
+            margin-left: 16px;
+        }
+        
+        .svg20 {
+            margin-left: 1077px;
+            margin-top: 10px;
+        }
+        
+        .svg19 {
+            margin-left: 20px;
+            margin-top: 10px;
+            color: black;
+        }
+        
+        .svg18 {
+            margin-left: 18px;
+            margin-top: 12px;
+        }
+        
+        .svg4 {
+            margin-left: 508px;
+            margin-top: 10px;
+        }
+        
+        .svg10,
+        .svg7 {
+            margin-left: 508px;
+            margin-top: 10px;
+        }
+        
+        .svg17 {
+            margin-left: 17px;
+            margin-top: 15px;
+        }
+.song__bg::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /*background: rgba(0, 0, 0, .5);*/
+}
+
+.song-wrap {
+    padding-top: 70px;
+}
+
+.song-disc {
+    position: relative;
+    width: 296px;
+    height: 296px;
+    margin: 0 auto;
+}
+
+.song-disc .lines {
+    width: 296px;
+    height: 295px;
+    background: repeating-radial-gradient(black, black 5px, #1c1c1c 7px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.song-disc .cd {
+    font-family: "宋体n";
+    font-size: 12px;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: -webkit-linear-gradient(top, white 50%, pink 50%);
+}
+
+.song-disc__bg {
+    /*position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;*/
+    /*background: url(images/disc-ip6.png) no-repeat center;*/
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(45deg, transparent 35%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.2) 55%, transparent);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.song-disc__cover {
+    position: absolute;
+    z-index: 1;
+    width: 184px;
+    height: 184px;
+    left: 50%;
+    top: 50%;
+    margin-left: -92px;
+    margin-top: -92px;
+}
+
+.song-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.u-img {
+    width: 330px;
+}
+
+.song-img.play {
+    animation: circle 10s linear infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.play-btn {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url(images/play.png) no-repeat;
+    background-size: contain;
+}
+
+.play-btn.play {
+    display: none;
+}
+
+.song-needle {
+    position: absolute;
+    z-index: 3;
+    top: -70px;
+    width: 96px;
+    height: 137px;
+    left: 133px;
+    background: url(images/needle-ip6.png) no-repeat;
+    background-size: contain;
+    transform: rotate(-30deg);
+    transform-origin: left top;
+    transition: transform .5s;
+}
+
+.song-needle.play {
+    transform: rotate(0);
+}
+
+.song {
+    float: right;
+    overflow: scroll;
+    /*background-color: pink;*/
+    width: 300px;
+    height: 450px;
+    margin-left: 520px;
+    text-align: center;
+    /*overflow-x:hidden;*/
+    overflow: auto;
+    margin-top: 70px;
+}
+
+.comment {
+    width: 1000px;
+    height: 130px;
+    background-color: white;
+    position: absolute;
+    margin-left: 237px;
+    margin-top: 608px;
+    display: flex;
+}
+
+.comment li {
+    list-style-type: none;
+}
+
+.comment1>.comment-1-1{
+  margin-top: 10px;
+}
+.comment .comment1 {
+    width: 800px;
+    height: 126px;
+    background-color: white;
+    display: block;
+    /*position: absolute;*/
+    top: 200px;
+
+    margin-left: 14px;
+
+    border-bottom: 1px solid black;
+}
+
+.comment2 {
+    width: 1000px;
+    height: 130px;
+    background-color: white;
+    position: absolute;
+    margin-left: 227px;
+    margin-top: 738px;
+    display: flex;
+}
+
+.comment2 li {
+    list-style-type: none;
+}
+.comment2-3>.comment2-1{
+  margin-top: 10px;width: 800px;
+} 
+.comment2>.comment2-3>.comment-2-1{
+margin-top: 10px;width: 800px;
+}
+
+.comment2 .comment2-3 {
+    width: 800px;
+    margin-left: 8px;
+    border-bottom: 1px solid black;
+}
+
+.comment3 {
+  margin-top:875px;height: 150px;
+    width: 1000px;
+    background-color: white;
+    position: absolute;
+    margin-left: 227px;
+    display: flex;
+    margin-top:875px;height: 150px;
+}
+.comment3>.comment-3>.png3{
+margin-top: 13px;margin-left: 10px;
+}
+.comment3>.comment3-3>.comment-3-1{
+margin-top: 10px;width: 800px;
+}
+
+.comment3 li {
+    list-style-type: none;
+}
+
+.comment3 .comment3-3 {
+    width: 800px;
+    margin-left: 8px;
+    border-bottom: 1px solid black;
+}
+
+.comment4 {
+    width: 1000px;
+    background-color: white;
+    position: absolute;
+    margin-left: 227px;
+    display: flex;
+    margin-top:1032px;height: 200px;
+}
+.comment4>.comment-4>.png4{
+  margin-top: 10px;margin-left: 10px;
+}
+.comment4>.comment4-3>.comment-4-1
+{
+  margin-top: 10px;width: 800px;
+}
+
+.comment4 li {
+    list-style-type: none;
+}
+
+.comment4 .comment4-3 {
+    width: 800px;
+    height: 220px;
+    margin-left: 8px;
+    border-bottom: 1px solid black;
+}
+
+.comment5 {
+    width: 1000px;
+    height: 800px;
+    margin-top:1259px;
+    background-color: white;
+    position: absolute;
+    margin-left: 227px;
+    display: flex;
+    
+}
+
+.comment5 li {
+    list-style-type: none;
+}
+
+.comment5 .comment5-3 {
+    width: 800px;
+    height: 500px;
+    margin-left: 8px;
+    border-bottom: 1px solid black;
+}
+.comment5>.comment-5>.png5{
+margin-top: 10px;margin-left: 10px;
+}
+.comment5>.comment5-3>.comment-5-1{
+margin-top: 10px;width: 800px;
+}
+
+.song1 {
+    display: flex;
+}
+
+.list {
+    margin-left: 180px;
+    margin-top: 200px;
+}
+
+.audios1 {
+    position: fixed;
+    border-radius: 0;
+    bottom: 0;
+    width: 1000px;
+    margin-left: 166px;
+    background-color: white;
+    border-top: 3px solid rgba(241, 243, 244);
+}
+
+.end {
+    background-color: red;
+    position: fixed;
+    bottom: 0;
+    width: 1390px;
+    background-color: white;
+    height: 54px;
+    display: flex;
+    border-top: 3px solid rgba(241, 243, 244);
+}
+
+.soure {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.soure1 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.song-text {
+    position: absolute;
+    margin-left: 602px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.comment-2>.png2{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.comment1>.png1{
+  margin-left: 10px; margin-top: 10px;margin-right: 10px;
+}

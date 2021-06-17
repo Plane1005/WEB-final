@@ -95,9 +95,13 @@ export default class Regi extends Component {
     console.log(response.status)
     if (response.status == 200){
       // this.props.history.push("")
+      // console.log(values);
+      // console.log(values.phone);
+      onLogin(values.phone)
       alert('注册成功')
-      onLogin(values.username)
-      this.props.history.push("avat")
+      setTimeout(() => {
+        this.props.history.push("avat")
+      }, 50)
     }else{
       alert('该手机号已被注册！')
     }

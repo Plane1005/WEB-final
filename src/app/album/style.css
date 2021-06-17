@@ -1,0 +1,52 @@
+.m-con{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding: 5%;
+}
+.m-coll{
+    width: 22%;
+    margin: 2%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+.m-coll::before{ content: "";  display: block;}
+.m-img{
+    width: 100%;
+}
+.m-coll>span{
+    font-size: 30px;
+    display: block;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    font-style: SimSun;
+    margin-top: 40px;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:hover .m-img{
+    transform: scale(1.1,1.1);
+    opacity: .7;
+    transition:all .5s;
+}
+.m-play{
+    position: absolute;
+    height: 0%;
+    top: 30%;
+    right: 33%;
+}
+
+a:hover .m-play{
+    height: 20%;
+    transition:all .5s;
+}
+
+.cll-name{
+    color: #333;
+}

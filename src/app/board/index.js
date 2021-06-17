@@ -72,6 +72,7 @@ export default class board extends Component {
       .then((response) => {
         if (response.status === 200) {
           alert("留言成功");
+          window.location.reload()
         } else {
           alert("留言失败！！");
         }
@@ -146,7 +147,7 @@ export default class board extends Component {
     const { comments, submitting, value, data, avaimg, len, datanow } = this.state;
     return (
       //发表评论
-      <div>
+      <div style={{paddingBottom:'15px'}} >
         <Comment
           avatar={<Avatar src={avaimg} alt="Han Solo" />}
           content={

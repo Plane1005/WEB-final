@@ -46,10 +46,15 @@
     border: 2px solid rgb(175, 175, 175);
     border-radius: 20px;
 }
-
+.g-op>li:hover{
+    background-color: rgb(175, 175, 175);
+    cursor: pointer;
+    
+}
 .g-box {
     width: 700px;
     height: 500px;
+    position: relative;
 }
 
 .g-box ul {
@@ -57,7 +62,7 @@
 }
 
 .m-tab {
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(175, 175, 175);cursor: pointer;
 }
 
 .m-none {
@@ -65,9 +70,7 @@
 }
 
 .m-cnt {
-    display: block;
     margin-top: 20px;
-    display: flex;
 }
 
 .u-title {

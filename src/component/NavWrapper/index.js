@@ -35,10 +35,12 @@ class NavWrapper extends Component {
   }
 
   componentDidMount(){
+    console.log(loginUser());
     if (loginUser()!==undefined) {
       axios.post(`${API_SERVER}/api/init/getAvat`,{
         id:loginUser()
       }).then(response=>{
+        if (response.data.url){
         let urlarr = response.data.url.split('//')
         // console.log(urlarr);
         let url = API_SERVER
@@ -52,6 +54,9 @@ class NavWrapper extends Component {
           saveAvatar(url)
         }
         // console.log(this.state.imgurl)
+      }else{
+          this.setState({show:false,username:response.data.username,showname:true,showout:true})
+      }
       })
     }
   }

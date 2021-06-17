@@ -3,29 +3,47 @@ import "./style.css";
 import p1 from '../../img/p1.png';
 import basic from '../../img/basic.svg';
 import p3 from '../../img/p3.jpg';
+import p4 from '../../img/p4.PNG';
 import comeout from '../../img/comeout.svg';
 import award from '../../img/award.svg';
 
 export default class Pers extends Component {
 
   state = {
-    
+    show1 : true,
+    show2 : false,
+    show3 : false
+  }
+
+  ch1 = (e)=>{
+    this.setState({show1:true,show2:false,show3:false})
+  }
+
+  ch2 = ()=>{
+    this.setState({show1:false,show2:true,show3:false})
+  }
+
+  ch3 = ()=>{
+    this.setState({show1:false,show2:false,show3:true})
   }
 
   render() {
+
+    const {show1,show2,show3} = this.state
+
     return (
       <div className='g-main' >
         <div>
           <div className="g-tab">个人简介</div>
           <ul className="g-op">
-            <li className="m-tab">基本信息</li>
-            <li>出道经历</li>
-            <li>主要成就</li>
+            <li onClick={this.ch1} >基本信息</li>
+            <li onClick={this.ch2} >出道经历</li>
+            <li onClick={this.ch3} >主要成就</li>
           </ul>
         </div>
 
         <div className="g-box">
-          <div className="m-none m-cnt">
+          <div className="m-cnt"  style={{display:show1 ? 'block' : 'none' }}  >
             <div>
               <div className="u-title">
                 <img src={basic}></img>
@@ -49,13 +67,13 @@ export default class Pers extends Component {
                 </ul>
               </div>
             </div>
-            <div>
+            <div style={{position:'absolute',top:'0',right:'0'}} >
               <div className="u-img">
                 <img src={p3}></img>
               </div>
             </div>
           </div>
-          <div className="m-none">
+          <div className="m-cnt" style={{display:show2 ? 'block' : 'none' }} >
             <div>
               <div className="u-title">
                 <img src={comeout}></img>
@@ -68,7 +86,7 @@ export default class Pers extends Component {
               </p>
             </div>
           </div>
-          <div className="m-none">
+          <div className="m-cnt" style={{display:show3 ? 'block' : 'none' }} >
             <div>
               <div className="u-title">
                 <img src={award}></img>
@@ -95,8 +113,8 @@ export default class Pers extends Component {
               </ul>
             </div>
             <div>
-              <div className="u-img">
-                <img src={p3}></img>
+              <div className="u-img" style={{position:'absolute',top:'0',right:'0'}} >
+                <img src={p4}></img>
               </div>
             </div>
           </div>

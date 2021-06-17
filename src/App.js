@@ -10,6 +10,7 @@ import Login from './app/login/index.js'
 import Regi from './app/regi/index.js'
 import Board from './app/board/index.js'
 import Avat from './app/avat/index.js'
+import Info from './app/info/index.js'
 import  './App.less'
 
 export default class App extends Component {
@@ -27,6 +28,7 @@ export default class App extends Component {
               <Route exact path='/regi' component={Regi}/>
               <Route exact path='/board' component={Board}/>
               <Route exact path='/avat' component={Avat}/>
+              <Route exact path='/info' component={Info}/>
             </Switch>
           </NavWrapper>
         </Switch>  
